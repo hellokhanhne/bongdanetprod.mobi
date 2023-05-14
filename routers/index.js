@@ -14,10 +14,10 @@ router.get("/", async (req, res) => {
     const $ = cheerio.load(htmlRes.data);
 
     const content_center = $(".content-homenew-center");
-    const ads_elements = content_center.find(".banner_ads-bdn");
-    for (let ads of ads_elements) {
-      $(ads).remove();
-    }
+    // const ads_elements = content_center.find(".banner_ads-bdn");
+    // for (let ads of ads_elements) {
+    //   $(ads).remove();
+    // }
     const noticeContent = content_center.find(".zone-notice.zone-notice-new");
     $(noticeContent).remove();
     res.render("home", {

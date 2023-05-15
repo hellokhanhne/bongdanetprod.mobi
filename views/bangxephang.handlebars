@@ -1,0 +1,15 @@
+{{{body}}}
+
+<script>
+    document.querySelector(".ajax-load-live").addEventListener("click", (function (e) {
+
+        $.get("/livescore", function (res) {
+            const els = $(".content_box_home")
+            els[1].innerHTML = res
+            $(".sub-menu-active").removeClass("sub-menu-active")
+        })
+
+
+    }))
+
+</script>

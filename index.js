@@ -5,6 +5,9 @@ const path = require("path");
 const router = require("./routers");
 const lichdidau = require("./routers/lichthidau");
 const livecore = require("./routers/livecore");
+const ketqua = require("./routers/ketquabongda");
+const bangxephang = require("./routers/bangxephang");
+const catchall = require("./routers/catchall");
 
 const app = express();
 
@@ -17,9 +20,8 @@ app.set("views", path.resolve(__dirname, "./views"));
 app.use("/", router);
 app.use("/livescore", livecore);
 app.use("/lich-thi-dau-bong-da", lichdidau);
+app.use("/ket-qua-bong-da", ketqua);
+app.use("/bang-xep-hang-bong-da", bangxephang);
 
-app.get("*", (req, res) => {
-  res.redirect("/");
-});
-
+app.get("*", catchall);
 app.listen(8080);
